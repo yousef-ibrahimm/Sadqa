@@ -1,5 +1,5 @@
-import { View, Text } from "react-native";
-
+import { View, Text, StyleSheet } from "react-native";
+import Colors from "../constants/colors";
 export default function HomeScreen() {
   return (
     <View>
@@ -7,3 +7,10 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: Colors.primary,
+  },
+});

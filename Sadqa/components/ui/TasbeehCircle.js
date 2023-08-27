@@ -5,11 +5,11 @@ import Colors from "../../constants/colors";
 
 const TasbeehCircle = ({ children, onPress }) => {
   return (
-    <View style={styles.circle}>
-      <Pressable onPress={onPress}>
+    <Pressable onPress={onPress}>
+      <View style={styles.circle}>
         <Text style={styles.text}>{children}</Text>
-      </Pressable>
-    </View>
+      </View>
+    </Pressable>
   );
 };
 
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "black",
-    fontSize: 20,
+    fontSize: 30,
+    fontFamily: "AmiriBold",
   },
 });
 

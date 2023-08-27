@@ -3,7 +3,12 @@ import Colors from "../../constants/colors";
 export default function GeneralButton({ children, onPress }) {
   return (
     <View style={styles.container}>
-      <Pressable onPress={onPress}>{children}</Pressable>
+      <Pressable
+        style={({ pressed }) => pressed && styles.pressed}
+        onPress={onPress}
+      >
+        {children}
+      </Pressable>
     </View>
   );
 }
@@ -15,6 +20,14 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginVertical: 4,
     marginHorizontal: 12,
-    backgroundColor: Colors.accent,
+    backgroundColor: "brown",
+    elevation: 4,
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 5 },
+    shadowRadius: 6,
+    shadowOpacity: 1,
+  },
+  pressed: {
+    opacity: 0.9,
   },
 });

@@ -40,7 +40,7 @@ export default function TasbeehScreen() {
       )}
       <View style={styles.counterDisplay}>
         <DuaaWrapper>
-          <Text>{tasbeehDuaa}</Text>
+          <Text style={styles.duaaText}>{tasbeehDuaa}</Text>
         </DuaaWrapper>
         <DuaaWrapper>
           <Text style={styles.counterTxt}>{count}</Text>
@@ -69,5 +69,9 @@ const styles = StyleSheet.create({
   },
   counterTxt: {
     alignItems: "center",
+  },
+  duaaText: {
+    fontSize: 40,
+    fontFamily: "AmiriRegular",
   },
 });

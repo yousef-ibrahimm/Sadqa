@@ -26,7 +26,7 @@ export default function MainScreens() {
         component={HomeScreen}
         options={{
           title: "Home",
-          tabBarIcon: ({ focused, color, size }) => {
+          tabBarIcon: ({ color, size }) => {
             return <Ionicons name="home-outline" size={size} color={color} />;
           },
         }}
