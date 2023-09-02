@@ -5,34 +5,35 @@ import DuaaWrapper from "../components/ui/DuaaWrapper";
 import TasbeehCircle from "../components/ui/TasbeehCircle";
 
 export default function TasbeehScreen() {
+  const [renderCount, setRenderCount] = useState(true);
   const [count, setCount] = useState(0);
   const [tasbeehDuaa, setTabseehDuaa] = useState("سُبْحاَنَ اللهِ");
   const [renderDuaa, setRenderDuaa] = useState(false);
 
   function increment() {
-    if (count > 32) {
+    if (count === 33) {
       setTabseehDuaa("اَلْحَمْدُ لِلهِ");
-    } else if (count > 65) {
+    } else if (count === 66) {
       setTabseehDuaa("اَلّلَهُ اَكْبَرْ");
-    } else if (count > 98) {
+    } else if (count === 99) {
       setRenderDuaa(true);
+      setRenderCount(false);
       setTabseehDuaa("آمين");
     } else if (count === 100) {
-      reset();
+      setCount(0);
+      setRenderCount(true);
+      setRenderDuaa(false);
+      setTabseehDuaa("سُبْحاَنَ اللهِ");
+      return; // Early return to prevent further execution
     }
     setCount(count + 1);
-  }
-
-  function reset() {
-    setCount(0);
-    setTabseehDuaa("سُبْحاَنَ اللهِ");
   }
 
   return (
     <View style={styles.root}>
       {renderDuaa && (
         <DuaaWrapper>
-          <Text>
+          <Text style={styles.duaaAppearText}>
             لاَأِلَاهَ اِلاَّ اللّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ
             وَلَهُ الْحَمْدُ وَهُوَ عَلىَ كُلِّ شَيْءِِقَدِيرُ
           </Text>
@@ -42,9 +43,11 @@ export default function TasbeehScreen() {
         <DuaaWrapper>
           <Text style={styles.duaaText}>{tasbeehDuaa}</Text>
         </DuaaWrapper>
-        <DuaaWrapper>
-          <Text style={styles.counterTxt}>{count}</Text>
-        </DuaaWrapper>
+        {renderCount && (
+          <DuaaWrapper>
+            <Text style={styles.counterTxt}>{count}</Text>
+          </DuaaWrapper>
+        )}
       </View>
       <TasbeehCircle onPress={increment}>سَبِّحِ</TasbeehCircle>
     </View>
@@ -72,6 +75,10 @@ const styles = StyleSheet.create({
   },
   duaaText: {
     fontSize: 40,
+    fontFamily: "AmiriRegular",
+  },
+  duaaAppearText: {
+    fontSize: 25,
     fontFamily: "AmiriRegular",
   },
 });

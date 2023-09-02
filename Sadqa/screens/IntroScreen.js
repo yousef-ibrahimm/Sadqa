@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import GeneralButton from "../components/ui/GeneralButton";
 import GeneralWrapper from "../components/ui/GeneralWrapper";
 import * as SplashScreen from "expo-splash-screen";
+import NotebookWrapper from "../components/ui/NotebookWrapper";
 
 export default function IntroScreen({ navigation }) {
   const [fontsLoaded] = useFonts({
@@ -41,11 +42,15 @@ export default function IntroScreen({ navigation }) {
           </Text>
         </GeneralWrapper>
       </View>
+      <View style={styles.about}>
+        <NotebookWrapper title="About">
+          <Text style={styles.txt}>
+            Sadqa is an ad-free non-profit app for muslims all around the world.
+            Explore all the features by clicking the "Continue" button.
+          </Text>
+        </NotebookWrapper>
+      </View>
       <GeneralWrapper>
-        <Text style={styles.txt}>
-          Sadqa is an ad-free non-profit app for muslims all around the world.
-          Explore all the features by clicking the "Continue" button.
-        </Text>
         <Text style={styles.bismellahTxt}>
           بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
         </Text>
@@ -95,8 +100,7 @@ const styles = StyleSheet.create({
   btn: {
     color: "white",
   },
+  about: {
+    flex: 0.6,
+  },
 });
-
-{
-  /* <Text style={styles.introText}>صدقة جارية علي روح ادهم ياسر زمزم</Text> */
-}
