@@ -11,10 +11,14 @@ import MainScreens from "./screens/MainScreens";
 import QuranScreen from "./screens/QuranScreen";
 import SurahScreen from "./screens/SurahScreen";
 import { createClient } from "@supabase/supabase-js";
-import { API_URL, API_KEY } from "@env";
+import { EXPO_PRIVATE_API_URL, EXPO_PRIVATE_API_KEY } from "@env";
 
 AppRegistry.registerComponent(appName, () => App);
-export const supabase = createClient(API_URL, API_KEY);
+
+export const supabase = createClient(
+  EXPO_PRIVATE_API_URL,
+  EXPO_PRIVATE_API_KEY
+);
 const Stack = createStackNavigator();
 
 export default function App() {

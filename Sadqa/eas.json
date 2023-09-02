@@ -8,7 +8,15 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
+      "android": {
+        "buildType": "apk"
+      },
+      "distribution": "internal",
+      "env": {
+        "EXPO_PRIVATE_API_URL": "https://tdcuuigxfvhjpptzxbnx.supabase.co",
+        "EXPO_PRIVATE_API_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRkY3V1aWd4ZnZoanBwdHp4Ym54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA3NDAxMDUsImV4cCI6MjAwNjMxNjEwNX0.K9Iq8hUY2lrlUylYQQYgbfNHKkg0FZytx4XlZU4AQTA",
+        "EXPO_PUBLIC_API_QURAN": "https://api.quran.com/api/v4/"
+      }
     },
     "production": {}
   },

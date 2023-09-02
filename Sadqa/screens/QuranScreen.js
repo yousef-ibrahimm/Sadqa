@@ -1,34 +1,29 @@
 import { View, StyleSheet, FlatList } from "react-native";
 import { useState } from "react";
 import Colors from "../constants/colors";
-import { fetchQuran } from "../quran-api/https";
+import { fetchChapters } from "../quran-api/https";
 import NameWrapper from "../components/ui/NameWrapper";
 
 export default function QuranScreen({ navigation }) {
   const [surahs, setSurahs] = useState([]);
 
-  async function fetchData() {
-    const response = await fetchQuran();
-    return response.data.surahs;
-  }
-
   async function get() {
-    const resData = await fetchData();
+    const resData = await fetchChapters();
     setSurahs(await resData);
   }
 
   function renderSurahs(itemData) {
     function navigateToSurah() {
       navigation.navigate("Surah", {
-        name: itemData.item.name,
-        engName: itemData.item.englishName,
-        ayat: itemData.item.ayahs,
+        name: itemData.item.name_arabic,
+        engName: itemData.item.name_complex,
+        chapterId: itemData.item.id,
       });
     }
     return (
       <NameWrapper
-        name={itemData.item.name}
-        engName={itemData.item.englishName}
+        name={itemData.item.name_arabic}
+        engName={itemData.item.name_complex}
         onPress={navigateToSurah}
       />
     );
@@ -41,7 +36,7 @@ export default function QuranScreen({ navigation }) {
         <FlatList
           data={surahs}
           renderItem={renderSurahs}
-          keyExtractor={(item) => item.number}
+          keyExtractor={(item) => item.id}
         />
       </View>
     </View>
