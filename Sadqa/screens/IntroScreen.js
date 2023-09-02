@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import Colors from "../constants/colors";
+import { useFonts } from "expo-font";
 import GeneralButton from "../components/ui/GeneralButton";
 import GeneralWrapper from "../components/ui/GeneralWrapper";
 

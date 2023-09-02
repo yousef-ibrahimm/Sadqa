@@ -1,15 +1,26 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { fetchSurah } from "../quran-api/https";
 import AyahWrapper from "../components/ui/AyahWrapper";
 import Colors from "../constants/colors";
 
 export default function SurahScreen({ route }) {
-  const ayat = route.params.ayat;
+  const chapterId = route.params.chapterId;
   const surahName = route.params.name;
   const surahEngName = route.params.engName;
+  const [ayat, setAyat] = useState([]);
+
+  async function get() {
+    const resData = await fetchSurah(chapterId);
+    setAyat(await resData);
+  }
 
   function renderAyat(data) {
-    return <AyahWrapper text={data.item.text} num={data.item.numberInSurah} />;
+    return (
+      <AyahWrapper text={data.item.text_uthmani} num={data.item.verse_key} />
+    );
   }
+  get();
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -23,7 +34,7 @@ export default function SurahScreen({ route }) {
       <FlatList
         data={ayat}
         renderItem={renderAyat}
-        keyExtractor={(item) => item.numberInSurah}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
