@@ -18,6 +18,7 @@ export default function QuranScreen({ navigation }) {
         name: itemData.item.name_arabic,
         engName: itemData.item.name_complex,
         chapterId: itemData.item.id,
+        bismellahPre: itemData.item.bismillah_pre,
       });
     }
     return (
