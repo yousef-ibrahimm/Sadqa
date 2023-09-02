@@ -22,14 +22,6 @@ export const supabase = createClient(
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [loaded] = useFonts({
-    ArefRuqaaRegular: require("./fonts/ArefRuqaa-Regular.ttf"),
-    ArefRuqaaBold: require("./fonts/ArefRuqaa-Bold.ttf"),
-    AmiriRegular: require("./fonts/Amiri-Regular.ttf"),
-    AmiriBold: require("./fonts/Amiri-Bold.ttf"),
-    AmiriQuran: require("./fonts/AmiriQuran-Regular.ttf"),
-    SaleemQuran: require("./fonts/_PDMS_Saleem_QuranFont.ttf"),
-  });
   return (
     <NavigationContainer>
       <Stack.Navigator

@@ -1,15 +1,36 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import { useCallback } from "react";
 import Colors from "../constants/colors";
 import { useFonts } from "expo-font";
 import GeneralButton from "../components/ui/GeneralButton";
 import GeneralWrapper from "../components/ui/GeneralWrapper";
+import * as SplashScreen from "expo-splash-screen";
 
 export default function IntroScreen({ navigation }) {
+  const [fontsLoaded] = useFonts({
+    ArefRuqaaRegular: require("../fonts/ArefRuqaa-Regular.ttf"),
+    ArefRuqaaBold: require("../fonts/ArefRuqaa-Bold.ttf"),
+    AmiriRegular: require("../fonts/Amiri-Regular.ttf"),
+    AmiriBold: require("../fonts/Amiri-Bold.ttf"),
+    AmiriQuran: require("../fonts/AmiriQuran-Regular.ttf"),
+    SaleemQuran: require("../fonts/_PDMS_Saleem_QuranFont.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   function navigateToHome() {
     navigation.navigate("MainScreens");
   }
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <View style={styles.introContainer}>
         <GeneralWrapper>
           <Image style={styles.logo} source={require("../assets/logo.png")} />
