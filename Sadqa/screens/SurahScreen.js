@@ -13,7 +13,7 @@ export default function SurahScreen({ route }) {
   const bismellahObj = {
     id: 0,
     text_uthmani: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-    verse_key: "0:0",
+    verse_key: "",
   };
   async function get() {
     const resData = await fetchSurah(chapterId);

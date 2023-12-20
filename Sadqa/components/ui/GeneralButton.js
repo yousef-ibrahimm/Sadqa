@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginVertical: 4,
     marginHorizontal: 12,
-    backgroundColor: "brown",
+    backgroundColor: Colors.primaryDark,
     elevation: 4,
     shadowColor: "#000000",
     shadowOffset: { width: 0, height: 5 },

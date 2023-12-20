@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: "AmiriRegular",
     textAlign: "center",
+    color: "black",
   },
   engTxt: {
     fontSize: 30,

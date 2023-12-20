@@ -36,11 +36,11 @@ export default function IntroScreen({ navigation }) {
         <GeneralWrapper>
           <Image style={styles.logo} source={require("../assets/logo.png")} />
         </GeneralWrapper>
-        <GeneralWrapper style={{ width: "50%" }}>
+        {/* <GeneralWrapper style={{ width: "50%" }}>
           <Text style={styles.introText}>
             Welcome to Sadqa, your new Islamic app!
           </Text>
-        </GeneralWrapper>
+        </GeneralWrapper> */}
       </View>
       <View style={styles.about}>
         <NotebookWrapper title="About">
@@ -59,7 +59,7 @@ export default function IntroScreen({ navigation }) {
         <Text style={styles.sadqaText}>صدقة جارية علي روح ادهم ياسر زمزم</Text>
       </GeneralWrapper>
       <GeneralButton onPress={navigateToHome}>
-        <Text style={styles.btn}>Continue</Text>
+        <Text style={styles.btn}>Continue التالي</Text>
       </GeneralButton>
     </View>
   );
@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     color: "white",
+    fontSize: 25,
+    fontFamily: "AmiriRegular",
   },
   about: {
     flex: 0.6,
