@@ -12,6 +12,7 @@ import QuranScreen from "./screens/QuranScreen";
 import SurahScreen from "./screens/SurahScreen";
 import { createClient } from "@supabase/supabase-js";
 import { EXPO_PRIVATE_API_URL, EXPO_PRIVATE_API_KEY } from "@env";
+import HomeScreen from "./screens/HomeScreen";
 
 AppRegistry.registerComponent(appName, () => App);
 
@@ -46,19 +47,6 @@ export default function App() {
             headerBackButtonMenuEnabled: false,
             headerShown: false,
           }}
-        />
-        <Stack.Screen
-          name="Quran"
-          component={QuranScreen}
-          options={{
-            headerBackButtonMenuEnabled: false,
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Surah"
-          component={SurahScreen}
-          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
