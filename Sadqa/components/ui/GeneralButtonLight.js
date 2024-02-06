@@ -1,5 +1,6 @@
 import { View, StyleSheet, Pressable } from "react-native";
 import Colors from "../../constants/colors";
+
 export default function GeneralButtonLight({ children, onPress }) {
   return (
     <View style={styles.container}>

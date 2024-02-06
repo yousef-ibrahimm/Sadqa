@@ -48,6 +48,15 @@ export default function App() {
             headerShown: false,
           }}
         />
+
+        <Stack.Screen
+          name="Surah"
+          component={SurahScreen}
+          options={{
+            headerBackButtonMenuEnabled: false,
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

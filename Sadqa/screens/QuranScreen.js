@@ -1,4 +1,4 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, Text } from "react-native";
 import { useState } from "react";
 import Colors from "../constants/colors";
 import { fetchChapters } from "../quran-api/https";
@@ -34,6 +34,9 @@ export default function QuranScreen({ navigation }) {
   return (
     <View style={styles.root}>
       <View style={styles.rootContainer}>
+        <Text style={{ fontSize: 30, color: "white", textAlign: "center" }}>
+          القرآن الكريم
+        </Text>
         <FlatList
           data={surahs}
           renderItem={renderSurahs}
@@ -47,9 +50,10 @@ export default function QuranScreen({ navigation }) {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
+    paddingTop: 50,
     backgroundColor: Colors.primary,
   },
   rootContainer: {
-    marginTop: 25,
+    marginTop: 15,
   },
 });
