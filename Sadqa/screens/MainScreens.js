@@ -1,7 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Colors from "../constants/colors";
-
-import SurahScreen from "./SurahScreen";
 import DuaaScreen from "./DuaaScreen";
 import TasbeehScreen from "./TasbeehScreen";
 import HomeScreen from "./HomeScreen";

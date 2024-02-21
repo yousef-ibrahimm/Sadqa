@@ -1,6 +1,7 @@
 import { View, StyleSheet, Pressable } from "react-native";
 import Colors from "../../constants/colors";
-export default function GeneralButton({ children, onPress }) {
+
+export default function GeneralButtonLight({ children, onPress }) {
   return (
     <View style={styles.container}>
       <Pressable
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginVertical: 4,
     marginHorizontal: 12,
-    backgroundColor: Colors.primaryDark,
+    backgroundColor: "white",
     elevation: 4,
     shadowColor: "#000000",
     shadowOffset: { width: 0, height: 5 },

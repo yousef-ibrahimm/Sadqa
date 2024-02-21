@@ -8,19 +8,30 @@ export default function SurahScreen({ route }) {
   const chapterId = route.params.chapterId;
   const surahName = route.params.name;
   const surahEngName = route.params.engName;
+  const bismellahPre = route.params.bismellahPre;
   const [ayat, setAyat] = useState([]);
-
+  const bismellahObj = {
+    id: 0,
+    text_uthmani: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    verse_key: "",
+  };
   async function get() {
     const resData = await fetchSurah(chapterId);
-    setAyat(await resData);
+    let ayatArr = await resData;
+    if (bismellahPre) {
+      ayatArr = [bismellahObj, ...ayatArr];
+    }
+    return ayatArr;
   }
+
+  get().then((res) => setAyat(res));
 
   function renderAyat(data) {
     return (
       <AyahWrapper text={data.item.text_uthmani} num={data.item.verse_key} />
     );
   }
-  get();
+
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -47,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titleContainer: {
-    marginTop: 25,
+    marginTop: 50,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",

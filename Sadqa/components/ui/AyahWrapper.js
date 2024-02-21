@@ -38,12 +38,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   ayahTxt: {
-    fontSize: 30,
+    fontSize: 35,
     textAlign: "right",
     verticalAlign: "middle",
-    fontFamily: "AmiriQuran",
+    fontFamily: "SaleemQuran",
+    color: "black",
   },
   numText: {
-    color: "black",
+    color: "#eff3f5",
   },
 });

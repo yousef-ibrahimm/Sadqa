@@ -12,6 +12,7 @@ import QuranScreen from "./screens/QuranScreen";
 import SurahScreen from "./screens/SurahScreen";
 import { createClient } from "@supabase/supabase-js";
 import { EXPO_PRIVATE_API_URL, EXPO_PRIVATE_API_KEY } from "@env";
+import HomeScreen from "./screens/HomeScreen";
 
 AppRegistry.registerComponent(appName, () => App);
 
@@ -22,14 +23,6 @@ export const supabase = createClient(
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [loaded] = useFonts({
-    ArefRuqaaRegular: require("./fonts/ArefRuqaa-Regular.ttf"),
-    ArefRuqaaBold: require("./fonts/ArefRuqaa-Bold.ttf"),
-    AmiriRegular: require("./fonts/Amiri-Regular.ttf"),
-    AmiriBold: require("./fonts/Amiri-Bold.ttf"),
-    AmiriQuran: require("./fonts/AmiriQuran-Regular.ttf"),
-    SaleemQuran: require("./fonts/_PDMS_Saleem_QuranFont.ttf"),
-  });
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -55,29 +48,16 @@ export default function App() {
             headerShown: false,
           }}
         />
+
         <Stack.Screen
-          name="Quran"
-          component={QuranScreen}
+          name="Surah"
+          component={SurahScreen}
           options={{
             headerBackButtonMenuEnabled: false,
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="Surah"
-          component={SurahScreen}
-          options={{ headerShown: false }}
-        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
