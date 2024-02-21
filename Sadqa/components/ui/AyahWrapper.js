@@ -10,7 +10,7 @@ export default function AyahWrapper({ text, num, onPress }) {
         </View>
         <View styles={styles.numberContainer}>
           <View style={styles.NumberCircle}>
-            <Text style={styles.numText}>{num}</Text>
+            <Text style={styles.numText}>{num.split(":")[1]}</Text>
           </View>
         </View>
       </Pressable>
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     color: "black",
   },
   numText: {
-    color: "#eff3f5",
+    color: "#050505",
   },
 });

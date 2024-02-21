@@ -54,10 +54,12 @@ const styles = StyleSheet.create({
     flex: 0.3,
   },
   txt: {
-    fontSize: 25,
+    fontSize: 20,
     color: "black",
-    fontFamily: "AmiriRegular",
+    fontFamily: "AmiriBold",
     textAlign: "center",
+    padding: 20,
+    marginVertical: -13,
   },
   book: {
     width: 100,
