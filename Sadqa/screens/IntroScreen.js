@@ -32,33 +32,39 @@ export default function IntroScreen({ navigation }) {
   }
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <View style={styles.about}>
-        <Text style={styles.sadqaText}>
-          "صدقة جارية علي روح ادهم ياسر زمزم"
-        </Text>
-        <Text style={styles.txt}>
-          Sadqa is an ad-free non-profit app for muslims all around the world.
-        </Text>
-        <Text style={styles.txt}>
-          صدقة هو تطبيق غير هادف لربح خالٍ من الإعلانات للمسلمين في جميع أنحاء
-          العالم.
-        </Text>
-        <Text style={styles.txt}>Press continue to explore our app :)</Text>
-        <Text style={styles.txt}>اضغط على "التالي" لاستكشاف تطبيقنا</Text>
-      </View>
-      <View style={styles.introContainer}>
+      <View>
         <GeneralWrapper>
-          <Image style={styles.logo} source={require("../assets/logo.png")} />
-        </GeneralWrapper>
-        <GeneralWrapper>
-          <Text style={styles.bismellahTxt}>
-            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-          </Text>
+          <View style={styles.introContainer}>
+            <GeneralWrapper>
+              <Image
+                style={styles.logo}
+                source={require("../assets/logo.png")}
+              />
+              <Text style={styles.bismellahTxt}>
+                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+              </Text>
+            </GeneralWrapper>
+          </View>
+          <View style={styles.about}>
+            <Text style={styles.sadqaText}>
+              "صدقة جارية علي روح ادهم ياسر زمزم"
+            </Text>
+            <Text style={styles.txt}>
+              Sadqa is an ad-free non-profit app for muslims all around the
+              world.
+            </Text>
+            <Text style={styles.txt}>
+              صدقة هو تطبيق غير هادف لربح خالٍ من الإعلانات للمسلمين في جميع
+              أنحاء العالم.
+            </Text>
+            <Text style={styles.txt}>Press continue to explore our app :)</Text>
+            <Text style={styles.txt}>اضغط على "التالي" لاستكشاف تطبيقنا</Text>
+            <GeneralButton onPress={navigateToHome}>
+              <Text style={styles.btn}>Continue التالي</Text>
+            </GeneralButton>
+          </View>
         </GeneralWrapper>
       </View>
-      <GeneralButton onPress={navigateToHome}>
-        <Text style={styles.btn}>Continue التالي</Text>
-      </GeneralButton>
     </View>
   );
 }
@@ -76,6 +82,7 @@ const styles = StyleSheet.create({
   sadqaText: {
     fontSize: 22,
     fontFamily: "ArefRuqaaRegular",
+    paddingBottom: 2,
   },
   logo: {
     height: 200,
@@ -87,9 +94,9 @@ const styles = StyleSheet.create({
     fontFamily: "AmiriBold",
   },
   txt: {
-    fontSize: 25,
+    fontSize: 22,
     fontFamily: "AmiriBold",
-    color: "white",
+    color: "black",
   },
   bismellahTxt: {
     fontSize: 40,
@@ -100,6 +107,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 25,
     fontFamily: "AmiriRegular",
+    textAlign: "center",
   },
   about: {
     alignItems: "center",

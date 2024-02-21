@@ -33,7 +33,14 @@ export default function QuranScreen({ navigation }) {
   return (
     <View style={styles.root}>
       <View style={styles.rootContainer}>
-        <Text style={{ fontSize: 30, color: "white", textAlign: "center" }}>
+        <Text
+          style={{
+            fontSize: 30,
+            color: "white",
+            textAlign: "center",
+            paddingBottom: 15,
+          }}
+        >
           القرآن الكريم
         </Text>
         <FlatList
