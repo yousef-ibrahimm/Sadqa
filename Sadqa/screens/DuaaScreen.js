@@ -47,8 +47,6 @@ export default function DuaaScreen() {
       setNames(data);
     });
   }, []);
-  console.log(names);
-  console.log(duaas);
   return (
     <View style={styles.root}>
       <View style={styles.rootContainer}>

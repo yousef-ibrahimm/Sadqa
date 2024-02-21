@@ -32,32 +32,30 @@ export default function IntroScreen({ navigation }) {
   }
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
+      <View style={styles.about}>
+        <Text style={styles.sadqaText}>
+          "صدقة جارية علي روح ادهم ياسر زمزم"
+        </Text>
+        <Text style={styles.txt}>
+          Sadqa is an ad-free non-profit app for muslims all around the world.
+        </Text>
+        <Text style={styles.txt}>
+          صدقة هو تطبيق غير هادف لربح خالٍ من الإعلانات للمسلمين في جميع أنحاء
+          العالم.
+        </Text>
+        <Text style={styles.txt}>Press continue to explore our app :)</Text>
+        <Text style={styles.txt}>اضغط على "التالي" لاستكشاف تطبيقنا</Text>
+      </View>
       <View style={styles.introContainer}>
         <GeneralWrapper>
           <Image style={styles.logo} source={require("../assets/logo.png")} />
         </GeneralWrapper>
-        {/* <GeneralWrapper style={{ width: "50%" }}>
-          <Text style={styles.introText}>
-            Welcome to Sadqa, your new Islamic app!
+        <GeneralWrapper>
+          <Text style={styles.bismellahTxt}>
+            بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
           </Text>
-        </GeneralWrapper> */}
+        </GeneralWrapper>
       </View>
-      <View style={styles.about}>
-        <NotebookWrapper title="About">
-          <Text style={styles.txt}>
-            Sadqa is an ad-free non-profit app for muslims all around the world.
-            Explore all the features by clicking the "Continue" button.
-          </Text>
-        </NotebookWrapper>
-      </View>
-      <GeneralWrapper>
-        <Text style={styles.bismellahTxt}>
-          بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-        </Text>
-      </GeneralWrapper>
-      <GeneralWrapper>
-        <Text style={styles.sadqaText}>صدقة جارية علي روح ادهم ياسر زمزم</Text>
-      </GeneralWrapper>
       <GeneralButton onPress={navigateToHome}>
         <Text style={styles.btn}>Continue التالي</Text>
       </GeneralButton>
@@ -73,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   introContainer: {
-    flexDirection: "row",
+    flexDirection: "column",
   },
   sadqaText: {
     fontSize: 22,
@@ -89,12 +87,13 @@ const styles = StyleSheet.create({
     fontFamily: "AmiriBold",
   },
   txt: {
-    fontSize: 20,
-    fontFamily: "AmiriRegular",
+    fontSize: 25,
+    fontFamily: "AmiriBold",
+    color: "white",
   },
   bismellahTxt: {
-    fontSize: 18,
-    fontFamily: "AmiriQuran",
+    fontSize: 40,
+    fontFamily: "SaleemQuran",
     textAlign: "center",
   },
   btn: {
@@ -103,6 +102,7 @@ const styles = StyleSheet.create({
     fontFamily: "AmiriRegular",
   },
   about: {
-    flex: 0.6,
+    alignItems: "center",
+    paddingBottom: 50,
   },
 });

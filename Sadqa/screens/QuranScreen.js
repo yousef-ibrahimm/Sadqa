@@ -29,7 +29,6 @@ export default function QuranScreen({ navigation }) {
       />
     );
   }
-
   get();
   return (
     <View style={styles.root}>
